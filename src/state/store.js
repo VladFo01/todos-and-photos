@@ -5,12 +5,14 @@ import { todoReducer } from "./reducers/todoReducer";
 import { inputTodoReducer } from './reducers/inputTodoReducer';
 import { photoReducer } from './reducers/photoReducer';
 import { selectInputReducer } from './reducers/selectInputReducer';
+import { errorReducer } from './reducers/errorReducer';
 
 const rootReducer = combineReducers({
     todo: todoReducer,
     inputTodo: inputTodoReducer,
     photo: photoReducer,
     selectInput: selectInputReducer,
+    error: errorReducer,
 });
 
 const createStoreWithMiddleware = applyMiddleware(

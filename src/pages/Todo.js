@@ -1,13 +1,17 @@
 import React from "react";
 import { Container, Typography } from "@mui/material";
 import Header from "../components/Header/Header";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Todo = () => {
   const { todoId } = useParams();
   const todos = useSelector((state) => state.todo.todos);
-  const todo = todos.find((todo) => todo.id === todoId);
+  const todo = todos.find((todo) => todo?.id === todoId);
+
+  if (!todo) {
+    return <Navigate to="/todos" />
+  }
 
   return (
     <>

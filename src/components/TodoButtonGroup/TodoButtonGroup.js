@@ -8,7 +8,6 @@ export const TodoButtonGroup = () => {
   const dispatch = useDispatch();
 
   function onClickSortChanger(event) {
-    console.log(sortedBy);
     dispatch(changeSort(event.target.id));
   }
 
